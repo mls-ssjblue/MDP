@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/bt_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Bluetooth Not Enabled"
+        android:textColor="#ff0000"
+        android:textSize="17sp" />
+
+
+<!--         <ToggleButton -->
+<!--             android:id="@+id/switchBtn" -->
+<!--             android:layout_width="70dp" -->
+<!--             android:layout_height="40dp" -->
+<!--             android:background="@drawable/toggle_selector" -->
+<!--             android:checked="false" /> -->
+
+    <TextView
+        android:id="@+id/pairedTxt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#EC7703"
+        android:text="Paired Devices"
+        android:textSize="20sp"
+        android:gravity="center" />
+
+    <ListView
+        android:id="@+id/paired"
+        android:layout_width="match_parent"
+        android:layout_height="201dp"
+        android:scrollbars="vertical" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/othersTxt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#EC7703"
+        android:text="Other Devices"
+        android:textSize="20sp"
+        android:gravity="center" />
+
+    <ListView
+        android:id="@+id/others"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" >
+    </ListView>
+
+</LinearLayout>

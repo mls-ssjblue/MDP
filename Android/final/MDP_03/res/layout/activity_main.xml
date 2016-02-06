@@ -1,0 +1,182 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:focusable="true" 
+    android:focusableInTouchMode="true">
+
+    <com.example.mdp.Grid
+        android:id="@+id/arena"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="15dp" 
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+    
+    <Button
+        android:id="@+id/F1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="169dp"
+        android:layout_marginLeft="225dp"
+        android:layout_marginStart="225dp"
+        android:text="F1" />
+
+    <Button
+        android:id="@+id/F2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/exploration_button"
+        android:layout_alignRight="@+id/exploration_button"
+        android:layout_alignTop="@+id/F1"
+        android:text="F2" />
+
+    <Button
+        android:id="@+id/exploration_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/F1"
+        android:layout_alignStart="@+id/F1"
+        android:layout_below="@+id/rightButton"
+        android:text="Mode:Exploration" />
+
+    <Button
+        android:id="@+id/shortest_path_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/update"
+        android:layout_alignEnd="@+id/exploration_button"
+        android:layout_alignLeft="@+id/exploration_button"
+        android:layout_alignRight="@+id/exploration_button"
+        android:layout_alignStart="@+id/exploration_button"
+        android:text="Mode:Shortest Path" />
+
+    <ToggleButton
+        android:id="@+id/auto_manual_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/F2"
+        android:layout_marginEnd="46dp"
+        android:layout_marginRight="46dp"
+        android:onClick="greyOutButton"
+        android:text="New ToggleButton"
+        android:textOff="Manual"
+        android:textOn="Auto" />
+
+    <TextView
+        android:id="@+id/statusBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/arena"  
+        android:layout_marginBottom="20dp"
+        android:textSize="25sp"
+        android:background="#F2F5A9"
+        android:text="@+string/robot_status"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/x_coordinate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/statusBar"
+        android:layout_marginBottom="47dp"
+        android:hint="@string/xCoordinate"
+        android:inputType="number"
+       />
+
+    <EditText
+        android:id="@+id/y_coordinate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/x_coordinate"
+        android:layout_alignBottom="@+id/x_coordinate"
+        android:layout_toStartOf="@+id/exploration_button"
+        android:hint="@string/yCoordinate"
+        android:inputType="number"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/confirm_coord"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/y_coordinate"
+        android:layout_alignEnd="@+id/F2"
+        android:text="Confirm"
+        android:textAllCaps="true" />
+
+    <ImageButton
+        android:id="@+id/leftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/rightButton"
+        android:src="@drawable/left_button" />
+
+  
+
+    <ImageButton
+        android:id="@+id/rightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/auto_manual_button"
+        android:layout_toEndOf="@+id/x_coordinate"
+        android:layout_toRightOf="@+id/x_coordinate"
+        android:src="@drawable/right_button" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/auto_manual_button"
+        android:layout_alignStart="@+id/auto_manual_button"
+        android:layout_below="@+id/exploration_button"
+        android:text="Update" />
+
+    <Button
+        android:id="@+id/cali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignEnd="@+id/auto_manual_button"
+        android:layout_alignRight="@+id/auto_manual_button"
+        android:layout_alignTop="@+id/confirm_coord"
+        android:text="Reset Map" />
+
+    <ImageButton
+        android:id="@+id/upButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/leftButton"
+        android:layout_alignEnd="@+id/x_coordinate"
+        android:layout_toRightOf="@+id/leftButton"
+        android:src="@drawable/up_button" />
+
+    <ImageButton
+        android:id="@+id/downButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/upButton"
+        android:layout_alignRight="@+id/upButton"
+        android:layout_alignTop="@+id/exploration_button"
+        android:src="@drawable/down_button" />
+
+    <ToggleButton
+        android:id="@+id/tilt_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/arena"
+        android:layout_alignParentBottom="true"
+        android:checked="false"
+        android:text="Tilt" />
+
+</RelativeLayout>
